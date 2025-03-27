@@ -1,0 +1,173 @@
+header {
+    background-color:black;
+    color:white;
+
+}
+/* Definindo as cores principais */
+:root {
+    --cor-primaria: #000000;  /* Preto */
+    --cor-secundaria: #333333; /* Preto mais suave */
+    --cor-de-fundo: #F8F8FF;   /* Branco leitoso */
+    --cor-texto: #FFFFFF;      /* Texto branco para boa leitura */
+}
+
+/* Estilo geral do corpo do site */
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-texto);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-primaria);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-secundaria);
+}
+
+header h1 {
+    color: var(--cor-texto);
+    margin: 0;
+}
+
+header p {
+    color: var(--cor-texto);
+    font-style: italic;
+}
+
+/* Seção de Carta */
+#carta {
+    background-color: var(--cor-secundaria);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#carta h2 {
+    color: var(--cor-texto);
+    text-align: center;
+}
+
+#carta p {
+    color: var(--cor-texto);
+    font-size: 1.1em;
+}
+
+/* Parte superior e inferior com cores diferentes */
+.topo {
+    background-color: var(--cor-primaria);
+    padding: 20px;
+    text-align: center;
+}
+
+.linha {
+    height: 5px;
+    background-color: var(--cor-secundaria);
+}
+
+.baixo {
+    background-color: var(--cor-de-fundo);
+    padding: 20px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animação de slide-in para o cabeçalho */
+header {
+    animation: slidein 1s ease-out;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+/* Estilo para as imagens das rosas */
+#rosas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    position: relative;
+}
+
+.rosa {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+/* Efeito de flutuação para as rosas */
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+}
+
+/* Animação de fade-in para a carta */
+#carta {
+    animation: fadein 2s ease-in-out;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.petala {
+    position: fixed;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background-image: url("img/petala.png"); /* Adicione uma imagem de pétala */
+    background-size: cover;
+    opacity: 0.8;
+    animation: cair linear infinite;
+}
+
+@keyframes cair {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+.petala::before {
+    content: "🌸";
+    font-size: 20px;
+}
